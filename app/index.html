@@ -1,18 +1,24 @@
-<!doctype html>
-<html lang="en" ng-app="OWMApp">
+<!DOCTYPE html>
+<html ng-app="owmApp">
 <head>
-	<meta charset="UTF-8">
-	<title>Open Weather Map App</title>
+<title>Open Weather Angular Application</title>
+<link rel="stylesheet" href="/app/style.css">
 </head>
-<body>
-    <a href="#/cities/New%20York">New York</a>
+<body ng-class="{loading: isLoading}">
+  <nav class="view-nav">
+    <a href="#/cities/New York">New York</a>
     <a href="#/cities/Dallas">Dallas</a>
     <a href="#/cities/Chicago">Chicago</a>
-    <a href="#/cities/NotOnList">Unsupported city</a>
+    <a href="#/cities/Toronto">Toronto</a>
+  </nav>
 
-    <div ng-view></div>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.js"></script>
-  <script src="./owm-app.js"></script>
+  <div class="animate-view-container">
+    <div ng-view class="animate-view"></div>
+  </div>
+  <img src="/app/images/loading-animation.gif">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.js"></script>
+  <script src="owm-app.js"></script>
 </body>
 </html>
